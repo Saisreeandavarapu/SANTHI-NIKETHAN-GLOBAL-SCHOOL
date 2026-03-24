@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FileText, CalendarCheck, FileCheck2, UserRoundCheck } from 'lucide-react';
+import { FileText, CalendarCheck, FileCheck2, CheckCircle2 } from 'lucide-react';
 
 export default function Admissions() {
   const steps = [
@@ -90,5 +90,3 @@ export default function Admissions() {
   );
 }
 
-// Need to import CheckCircle2 manually since I forgot above
-import { CheckCircle2 } from 'lucide-react';
