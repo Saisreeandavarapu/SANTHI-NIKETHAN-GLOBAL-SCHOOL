@@ -30,19 +30,19 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-brand-ocean-navy relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-brand-primary relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-brand-ocean-dark/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[0%] -left-[10%] w-[50%] h-[50%] bg-brand-ocean-dark/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[0%] -left-[10%] w-[50%] h-[50%] bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-8 px-4">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block bg-brand-ocean-dark/10 px-4 py-1.5 rounded-full text-white font-bold text-sm tracking-wider uppercase mb-6"
+              className="inline-block bg-brand-accent px-5 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-8 shadow-xl shadow-brand-accent/10"
             >
               Testimonials
             </motion.div>
@@ -51,9 +51,9 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-heading font-extrabold text-white"
+              className="text-4xl md:text-6xl font-heading font-black text-white tracking-tight leading-[1.1]"
             >
-              What Our Parents <span className="bg-brand-ocean-teal text-white px-2 rounded-lg whitespace-nowrap">Say</span>
+              What Our Parents <span className="text-brand-accent">Say</span>
             </motion.h2>
           </div>
           <motion.div
@@ -61,14 +61,15 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
+            className="hidden md:block"
           >
-            <p className="text-blue-100 max-w-sm text-right hidden md:block">
-              We take pride in building a community where parents trust us to shape the future of their children.
+            <p className="text-zinc-500 max-w-sm text-right font-medium text-lg leading-relaxed">
+              Building a community of trust where every child's future is shaped with care and excellence.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
           {TESTIMONIALS.map((testimonial, idx) => (
             <motion.div
               key={idx}
@@ -76,35 +77,35 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15, type: 'spring', stiffness: 100 }}
-              whileHover={{ y: -5 }}
-              className="bg-brand-ocean-dark p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all relative group"
+              whileHover={{ y: -10 }}
+              className="bg-brand-secondary/20 backdrop-blur-2xl p-10 rounded-[2.5rem] border border-white/5 shadow-2xl hover:shadow-brand-accent/5 transition-all duration-500 relative group"
             >
-              <div className="absolute top-6 right-6 text-slate-200 group-hover:text-white/20 transition-colors">
-                <Quote size={48} />
+              <div className="absolute top-8 right-8 text-white/5 group-hover:text-brand-accent/10 transition-colors duration-500">
+                <Quote size={56} />
               </div>
 
               {/* Rating stars */}
-              <div className="flex gap-1 mb-6">
+              <div className="flex gap-1.5 mb-8">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
                     size={16}
-                    className={i < testimonial.rating ? 'fill-brand-cream text-white' : 'fill-slate-200 text-slate-200'}
+                    className={i < testimonial.rating ? 'fill-brand-accent text-brand-accent' : 'fill-white/10 text-white/10'}
                   />
                 ))}
               </div>
 
-              <p className="text-blue-100 mb-8 italic relative z-10 leading-relaxed min-h-[100px]">
+              <p className="text-zinc-400 mb-10 font-medium italic relative z-10 leading-relaxed text-lg min-h-[120px]">
                 "{testimonial.content}"
               </p>
 
-              <div className="flex items-center gap-4 border-t border-slate-200 pt-6">
-                <div className="w-12 h-12 rounded-full bg-brand-ocean-dark text-white flex items-center justify-center font-bold font-heading text-xl">
+              <div className="flex items-center gap-5 border-t border-white/5 pt-8">
+                <div className="w-14 h-14 rounded-2xl bg-brand-primary border border-brand-accent/20 text-brand-accent flex items-center justify-center font-black font-heading text-2xl shadow-xl">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">{testimonial.name}</h4>
-                  <p className="text-sm text-slate-500">{testimonial.role}</p>
+                  <h4 className="font-black text-white text-lg tracking-tight">{testimonial.name}</h4>
+                  <p className="text-sm text-zinc-500 font-bold uppercase tracking-widest">{testimonial.role}</p>
                 </div>
               </div>
             </motion.div>

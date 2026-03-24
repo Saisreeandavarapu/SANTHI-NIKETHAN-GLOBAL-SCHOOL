@@ -3,12 +3,12 @@ import { Play } from 'lucide-react';
 
 export default function AboutUs() {
   return (
-    <section id="about" className="py-40 bg-brand-ocean-navy relative overflow-hidden">
+    <section id="about" className="py-12 md:py-40 bg-brand-primary relative overflow-hidden">
       {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-ocean-dark rounded-l-[100px] -z-10 opacity-50 hidden lg:block" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary rounded-l-[100px] -z-10 opacity-20 hidden lg:block" />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
 
           {/* Text Content Area */}
           <motion.div
@@ -17,43 +17,43 @@ export default function AboutUs() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block bg-brand-ocean-teal px-4 py-1.5 rounded-full text-white font-bold text-sm tracking-wider uppercase mb-6">
+            <div className="inline-block bg-brand-accent px-5 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-8 shadow-xl shadow-brand-accent/10">
               About Shantiniketan
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-white mb-8 leading-tight">
-              Our School Inspires You <span className="bg-brand-ocean-teal text-white px-2 rounded-lg whitespace-nowrap">More.</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-black text-white mb-10 leading-[1.1] tracking-tight">
+              Our School Inspires You <span className="text-brand-accent">More.</span>
             </h2>
 
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-              We are tightly integrating components in a way that will have the most beneficial impact on the development of the child. The core philosophy inspired by the Montessori method drives the curriculum, and the curriculum is the foundation for the tools and materials used in the school.
+            <p className="text-xl text-zinc-400 mb-10 leading-relaxed font-medium">
+              We are tightly integrating components in a way that will have the most beneficial impact on the development of the child. The core philosophy inspired by the Montessori method drives our curriculum.
             </p>
 
-            <div className="flex flex-col gap-6 mb-10">
-              <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                  <span className="text-blue-600 font-bold text-xl">1</span>
+            <div className="flex flex-col gap-8 mb-12">
+              <div className="flex gap-6 items-start group">
+                <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center shrink-0 group-hover:bg-brand-accent transition-all duration-500">
+                  <span className="text-brand-accent group-hover:text-white font-black text-2xl">1</span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2">Quality Education</h4>
-                  <p className="text-blue-100">The teachers have been trained intensively on the philosophy, curriculum, and the materials to provide the highest standard of learning.</p>
+                  <h4 className="text-2xl font-black text-white mb-2 tracking-tight">Quality Education</h4>
+                  <p className="text-zinc-300 font-medium">The teachers have been trained intensively on the philosophy and curriculum to provide the highest standard of learning.</p>
                 </div>
               </div>
-              <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
-                  <span className="text-amber-600 font-bold text-xl">2</span>
+              <div className="flex gap-6 items-start group">
+                <div className="w-14 h-14 rounded-2xl bg-brand-accent-light/10 border border-brand-accent-light/20 flex items-center justify-center shrink-0 group-hover:bg-brand-accent-light transition-all duration-500">
+                  <span className="text-brand-accent-light group-hover:text-white font-black text-2xl">2</span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2">Personalized Learning</h4>
-                  <p className="text-blue-100">We nurture individual students' distinct strengths, weaknesses, competencies, and interests. Each material is designed keeping curriculum objectives in mind.</p>
+                  <h4 className="text-2xl font-black text-white mb-2 tracking-tight">Personalized Learning</h4>
+                  <p className="text-zinc-300 font-medium">We nurture individual students' distinct strengths and interests. Each material is designed keeping curriculum objectives in mind.</p>
                 </div>
               </div>
             </div>
 
             <a
-              href="#admissions"
-              className="inline-block bg-brand-ocean-dark text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:bg-slate-800 hover:-translate-y-1 transition-all"
+              href="/about-us"
+              className="inline-block bg-brand-secondary/40 hover:bg-brand-secondary/60 backdrop-blur-xl border border-white/5 text-white px-10 py-5 rounded-2xl font-black tracking-widest shadow-2xl transition-all hover:-translate-y-1.5 active:scale-95"
             >
-              Discover More
+              DISCOVER MORE
             </a>
           </motion.div>
 
@@ -65,18 +65,18 @@ export default function AboutUs() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
+            <div className="relative rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.4)] border-8 border-brand-primary group">
               <img
                 src="https://shantiniketanschool.com/public/theme/assets/img/about/01.png"
                 alt="Students learning"
-                className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700 bg-slate-100"
+                className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-1000"
               />
-              <div className="absolute inset-0 bg-brand-ocean-dark/20 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition-colors duration-700" />
 
               {/* Play Video Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-20 h-20 bg-brand-ocean-navy/90 backdrop-blur-md rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform cursor-pointer pl-1 group-hover:bg-brand-ocean-navy group-hover:text-white">
-                  <Play size={32} className="fill-current" />
+                <button className="w-24 h-24 bg-brand-accent/90 backdrop-blur-2xl rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-all duration-500 cursor-pointer pl-1 group-hover:bg-brand-primary group-hover:text-brand-accent border border-white/20">
+                  <Play size={40} className="fill-current" />
                 </button>
               </div>
             </div>
@@ -87,10 +87,10 @@ export default function AboutUs() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="absolute -bottom-8 -left-8 bg-brand-ocean-dark text-white p-8 rounded-2xl shadow-xl max-w-[200px]"
+              className="absolute -bottom-10 -left-10 bg-brand-primary/90 backdrop-blur-3xl text-white p-10 rounded-[2.5rem] shadow-2xl border border-white/10 max-w-[240px]"
             >
-              <h3 className="text-5xl font-extrabold mb-2">95%</h3>
-              <p className="font-bold text-sm uppercase tracking-wide opacity-90">Student Success Rate</p>
+              <h3 className="text-6xl font-black mb-2 text-brand-accent">95%</h3>
+              <p className="font-black text-xs uppercase tracking-[0.2em] text-zinc-400">Student Success Rate</p>
             </motion.div>
 
           </motion.div>

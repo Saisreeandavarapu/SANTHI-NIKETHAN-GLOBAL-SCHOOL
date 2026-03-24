@@ -9,53 +9,55 @@ export default function Admissions() {
   ];
 
   return (
-    <main className="pt-32 pb-24 container mx-auto px-4 max-w-7xl min-h-[60vh]">
+    <main className="pt-32 pb-24 container mx-auto px-4 max-w-7xl min-h-[60vh] bg-brand-primary">
 
-      <div className="text-center max-w-3xl mx-auto mb-20">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-block bg-brand-ocean-teal px-4 py-1.5 rounded-full text-white font-bold text-sm tracking-wider uppercase mb-5">
-          Join Us
+      <div className="text-center max-w-3xl mx-auto mb-20 px-4">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-block bg-brand-accent px-6 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-8 shadow-xl shadow-brand-accent/20">
+          Admission Open
         </motion.div>
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl font-heading font-extrabold text-white mb-6">
-          Admission <span className="bg-brand-ocean-teal text-white px-2 rounded-lg whitespace-nowrap">2025-26</span>
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-5xl md:text-7xl font-heading font-black text-zinc-100 mb-8 tracking-tight">
+          Session <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-accent-light">2025-26</span>
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-blue-100">
-          To begin the admissions process, please complete and submit our Online Application Form. You will need to upload documents based on the grade level requirements.
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl text-zinc-400 font-medium leading-relaxed">
+          To begin the admissions process, please complete our online application form. Our team is ready to welcome your child into a world-class educational environment.
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 px-4">
         {/* Requirements */}
-        <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-brand-ocean-navy p-10 rounded-3xl shadow-lg border border-brand-ocean-cerulean/50 relative">
-          <div className="absolute top-0 right-0 p-8 text-zinc-50"><FileCheck2 size={70} /></div>
-          <h3 className="text-2xl font-heading font-bold text-white mb-8 relative z-10 flex items-center gap-3">
-            <span className="w-8 h-8 rounded-full bg-brand-ocean-dark text-white flex items-center justify-center text-sm">1</span> Required Documents
+        <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-brand-secondary/40 backdrop-blur-2xl p-10 md:p-14 rounded-[3rem] shadow-2xl border border-white/5 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-12 text-white/5 group-hover:text-brand-accent/5 transition-colors"><FileCheck2 size={120} /></div>
+          <h3 className="text-3xl font-heading font-black text-white mb-10 relative z-10 flex items-center gap-4">
+            <span className="w-10 h-10 rounded-2xl bg-brand-accent text-white flex items-center justify-center text-lg font-black shadow-lg shadow-brand-accent/30">1</span> 
+            Required Documents
           </h3>
-          <ul className="space-y-4 relative z-10 text-blue-100">
+          <ul className="space-y-5 relative z-10 text-zinc-400 font-medium">
             {['Photograph of Father, Mother & Child (JPEG/PNG 35x45mm)', 'Birth Certificate of the Student', 'Current Address Proof (Electricity Bill/Passport/Aadhar/Rent)', '1st & 2nd Guardian Photo (Authorized for pickup/drop)', 'Aadhar Card of Student', 'Last 2 years Academic Report cards'].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 size={20} className="text-white mt-1 shrink-0" />
-                <span>{item}</span>
+              <li key={i} className="flex items-start gap-4">
+                <CheckCircle2 size={22} className="text-brand-accent mt-1 shrink-0" />
+                <span className="text-lg">{item}</span>
               </li>
             ))}
           </ul>
         </motion.div>
 
         {/* Age Criteria */}
-        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-brand-ocean-dark text-white p-10 rounded-3xl shadow-xl relative overflow-hidden">
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-brand-ocean-dark/20 rounded-full blur-[80px]" />
-          <h3 className="text-2xl font-heading font-bold mb-8 relative z-10 flex items-center gap-3">
-            <span className="w-8 h-8 rounded-full bg-brand-ocean-dark text-white flex items-center justify-center text-sm">2</span> Age Criteria
+        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-brand-primary p-10 md:p-14 rounded-[3rem] shadow-2xl relative overflow-hidden border border-white/5 group">
+          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none" />
+          <h3 className="text-3xl font-heading font-black text-zinc-100 mb-10 relative z-10 flex items-center gap-4">
+            <span className="w-10 h-10 rounded-2xl bg-brand-primary border border-brand-accent/30 text-brand-accent flex items-center justify-center text-lg font-black shadow-lg">2</span> 
+            Age Criteria
           </h3>
-          <div className="space-y-6 relative z-10">
+          <div className="space-y-8 relative z-10">
             {[
-              { g: 'Play Group & Nursery', d: '1st July 2021 - 31st December 2022' },
-              { g: 'Lower KG', d: '1st July 2020 - 31st December 2021' },
-              { g: 'Upper KG', d: '1st July 2019 - 31st December 2020' },
-              { g: 'Grade 1', d: '1st July 2018 - 31st December 2019' }
+              { g: 'Play Group & Nursery', d: '1st July 2021 - 31st Dec 2022' },
+              { g: 'Lower KG', d: '1st July 2020 - 31st Dec 2021' },
+              { g: 'Upper KG', d: '1st July 2019 - 31st Dec 2020' },
+              { g: 'Grade 1', d: '1st July 2018 - 31st Dec 2019' }
             ].map((crit, i) => (
-              <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-brand-ocean-cerulean/50 pb-4">
-                <span className="font-bold text-lg text-white">{crit.g}</span>
-                <span className="text-blue-100/60 text-sm sm:text-right mt-1 sm:mt-0">{crit.d}</span>
+              <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/5 pb-5 group/item cursor-default">
+                <span className="font-black text-xl text-zinc-100 group-hover/item:text-brand-accent transition-colors">{crit.g}</span>
+                <span className="text-zinc-500 font-bold text-sm sm:text-right mt-2 sm:mt-0 tracking-wider bg-white/5 px-3 py-1 rounded-lg">{crit.d}</span>
               </div>
             ))}
           </div>
@@ -63,24 +65,27 @@ export default function Admissions() {
       </div>
 
       {/* Process Steps */}
-      <div className="bg-brand-ocean-dark rounded-[40px] p-10 lg:p-16 border border-brand-ocean-cerulean/50 text-center">
-        <h3 className="text-3xl font-heading font-bold text-white mb-4">Admission Process</h3>
-        <p className="text-blue-100 mb-12 max-w-2xl mx-auto">For information/queries, please contact the admissions office on 7767946588. After the admissions office receives the application form and required documents, the applicant will be considered for admission.</p>
+      <div className="bg-brand-primary rounded-[4rem] p-12 lg:p-20 border border-white/5 text-center shadow-[0_40px_100px_rgba(0,0,0,0.3)] relative overflow-hidden backdrop-blur-3xl mx-4">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent" />
+        <h3 className="text-4xl md:text-5xl font-heading font-black text-white mb-6">Admission Process</h3>
+        <p className="text-zinc-400 font-medium mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
+          For any queries, please contact the admissions office at <span className="text-brand-accent font-black">+91 77679 46588</span>. We ensure a smooth and personalized experience for every applicant.
+        </p>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid md:grid-cols-3 gap-12 relative px-4">
           {/* Connecting Line */}
-          <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-zinc-200" />
+          <div className="hidden md:block absolute top-[20%] left-1/6 right-1/6 h-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.2 }} className="relative z-10">
-                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto bg-brand-ocean-navy rounded-full flex items-center justify-center shadow-lg border-4 border-brand-ocean-cerulean/30 text-white mb-4 md:mb-6 hook-icon group">
-                  <Icon size={28} className="md:w-8 md:h-8 group-hover:scale-110 transition-transform" />
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.2 }} className="relative z-10 group">
+                <div className="w-24 h-24 md:w-28 md:h-28 mx-auto bg-brand-secondary/20 rounded-[2.5rem] flex items-center justify-center shadow-2xl border border-white/10 text-white mb-8 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 backdrop-blur-xl">
+                  <Icon size={36} className="text-brand-accent" />
                 </div>
-                <div className="w-7 h-7 md:w-8 md:h-8 mx-auto bg-brand-ocean-teal text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm mb-4">0{i + 1}</div>
-                <h4 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">{step.title}</h4>
-                <p className="text-blue-100 text-sm leading-relaxed px-4 md:px-0">{step.desc}</p>
+                <div className="w-9 h-9 mx-auto bg-brand-accent text-white rounded-xl flex items-center justify-center font-black text-sm mb-6 shadow-lg shadow-brand-accent/30 tracking-tighter">0{i + 1}</div>
+                <h4 className="text-2xl font-black text-white mb-4 tracking-tight">{step.title}</h4>
+                <p className="text-zinc-400 font-medium text-base leading-relaxed">{step.desc}</p>
               </motion.div>
             )
           })}

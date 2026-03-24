@@ -1,21 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  /* The Oceanic Dark Palette */
-  --color-brand-ocean-dark: #21295C;     /* Deepest Indigo Background */
-  --color-brand-ocean-navy: #1B3B6F;     /* True Navy Cards/Sections */
-  --color-brand-ocean-cerulean: #065A82; /* Deep Cerulean Borders/Secondary */
-  --color-brand-ocean-teal: #1C7293;     /* Bright Teal Accent/Buttons */
+  /* Golden Slate Premium Palette */
+  --color-brand-primary: #313C52;     /* Dark Slate Blue - Main Background */
+  --color-brand-secondary: #60697A;   /* Slate Gray - Sections/Cards */
+  --color-brand-accent: #B58E31;      /* Gold - Primary Accents/Buttons */
+  --color-brand-accent-light: #D6C6A2; /* Tan/Beige - Hover/Secondary Accents */
+  --color-brand-neutral: #AAADB2;     /* Gray - Borders/Text */
+  
   --font-sans: "Inter", "Outfit", sans-serif;
   --font-heading: "Outfit", sans-serif;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply font-sans bg-brand-ocean-dark text-blue-100 antialiased selection:bg-brand-ocean-teal selection:text-white;
+    @apply font-sans bg-brand-primary text-zinc-100 antialiased selection:bg-brand-accent selection:text-white;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.08) 0px, transparent 40%),
-      radial-gradient(at 100% 0%, hsla(240, 22%, 10%, 0.05) 0px, transparent 40%);
+      radial-gradient(at 0% 0%, hsla(43, 57%, 45%, 0.1) 0px, transparent 40%),
+      radial-gradient(at 100% 0%, hsla(220, 25%, 26%, 0.1) 0px, transparent 40%);
     background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  .glass-dark {
+    @apply bg-brand-primary/80 backdrop-blur-xl border border-brand-neutral/20 shadow-2xl;
+  }
+  .premium-gradient {
+    @apply bg-gradient-to-br from-brand-primary to-brand-secondary;
+  }
+  .gold-gradient {
+    @apply bg-gradient-to-r from-brand-accent to-brand-accent-light;
   }
 }

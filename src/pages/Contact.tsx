@@ -3,41 +3,41 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <main className="pt-32 pb-24 container mx-auto px-4 max-w-7xl min-h-[60vh] overflow-hidden">
+    <main className="pt-32 pb-24 container mx-auto px-4 max-w-7xl min-h-[60vh] bg-brand-primary overflow-hidden">
       
-      <div className="text-center max-w-3xl mx-auto mb-20">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-block bg-brand-ocean-teal px-4 py-1.5 rounded-full text-white font-bold text-sm tracking-wider uppercase mb-5">
+      <div className="text-center max-w-3xl mx-auto mb-20 px-4">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-block bg-brand-accent px-5 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-8 shadow-xl shadow-brand-accent/10">
           Get in Touch
         </motion.div>
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl font-heading font-extrabold text-white mb-6">
-          Contact us <span className="bg-brand-ocean-teal text-white px-2 rounded-lg whitespace-nowrap">today!</span>
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-5xl md:text-7xl font-heading font-black text-white mb-8 tracking-tight leading-[1.1]">
+          Contact us <span className="text-brand-accent">today!</span>
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-blue-100">
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl text-zinc-400 font-medium leading-relaxed">
           We are happy to hear your enquiry and we will get back to you asap. Reach out to our admissions office or visit the campus during open hours.
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 px-4">
         {/* Contact Info Cards */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once:true }} transition={{ duration: 0.6 }}
-          className="lg:col-span-2 space-y-4"
+          className="lg:col-span-2 space-y-6"
         >
           {[
             { title: 'Head Office', desc: 'JW26+RQV, Kutwal Colony, Lohegaon, Pune', icon: MapPin },
-            { title: 'Call Us', desc: '77679 46588', icon: Phone },
+            { title: 'Call Us', desc: '+91 77679 46588', icon: Phone },
             { title: 'Email Us', desc: 'shantiniketanuniqueschool@gmail.com', icon: Mail },
             { title: 'Open Time', desc: 'Mon - Sat (9.30AM - 3.00PM)', icon: Clock }
           ].map((info, idx) => {
             const Icon = info.icon;
             return (
-              <div key={idx} className="bg-brand-ocean-navy p-6 rounded-2xl shadow-sm border border-brand-ocean-cerulean/50 flex items-center gap-6 hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-brand-ocean-teal/5 text-white rounded-xl flex items-center justify-center shrink-0">
-                  <Icon size={24} />
+              <div key={idx} className="bg-brand-secondary/20 backdrop-blur-2xl p-8 rounded-[2.5rem] shadow-2xl border border-white/5 flex items-center gap-6 hover:-translate-y-1.5 transition-all duration-500 group">
+                <div className="w-16 h-16 bg-brand-primary border border-brand-accent/20 text-brand-accent rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shadow-xl">
+                  <Icon size={28} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-1">{info.title}</h4>
-                  <p className="text-blue-100 text-sm break-all">{info.desc}</p>
+                  <h4 className="font-black text-white text-lg mb-2 tracking-tight group-hover:text-brand-accent transition-colors">{info.title}</h4>
+                  <p className="text-zinc-500 font-medium text-sm break-all leading-relaxed">{info.desc}</p>
                 </div>
               </div>
             )
@@ -46,31 +46,31 @@ export default function Contact() {
 
         {/* Contact Form */}
         <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="lg:col-span-3">
-          <div className="bg-brand-ocean-navy p-8 md:p-12 rounded-[2rem] shadow-2xl border border-brand-ocean-cerulean/50 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-ocean-dark/5 rounded-full blur-3xl" />
+          <div className="bg-brand-secondary/10 backdrop-blur-3xl p-10 md:p-14 rounded-[4rem] shadow-[0_40px_100px_rgba(0,0,0,0.3)] border border-white/5 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none" />
             
-            <h3 className="text-3xl font-heading font-extrabold text-white mb-8">Send Message</h3>
+            <h3 className="text-3xl font-black font-heading text-white mb-10 tracking-tight">Send Message</h3>
             
-            <form className="space-y-6 relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-bold text-white mb-2">First Name</label>
-                  <input type="text" className="w-full bg-brand-ocean-dark border border-zinc-200 rounded-xl px-4 py-3 text-zinc-800 focus:outline-none focus:border-brand-cream focus:ring-1 focus:ring-brand-cream transition-colors" placeholder="John" />
+            <form className="space-y-8 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="block text-xs font-black text-zinc-500 uppercase tracking-widest ml-1">First Name</label>
+                  <input type="text" className="w-full bg-brand-primary/50 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all" placeholder="Enter first name" />
                 </div>
-                <div>
-                  <label className="block text-sm font-bold text-white mb-2">Last Name</label>
-                  <input type="text" className="w-full bg-brand-ocean-dark border border-zinc-200 rounded-xl px-4 py-3 text-zinc-800 focus:outline-none focus:border-brand-cream focus:ring-1 focus:ring-brand-cream transition-colors" placeholder="Doe" />
+                <div className="space-y-3">
+                  <label className="block text-xs font-black text-zinc-500 uppercase tracking-widest ml-1">Last Name</label>
+                  <input type="text" className="w-full bg-brand-primary/50 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all" placeholder="Enter last name" />
                 </div>
               </div>
-              <div>
-                <label className="block text-sm font-bold text-white mb-2">Email Address</label>
-                <input type="email" className="w-full bg-brand-ocean-dark border border-zinc-200 rounded-xl px-4 py-3 text-zinc-800 focus:outline-none focus:border-brand-cream focus:ring-1 focus:ring-brand-cream transition-colors" placeholder="john@example.com" />
+              <div className="space-y-3">
+                <label className="block text-xs font-black text-zinc-500 uppercase tracking-widest ml-1">Email Address</label>
+                <input type="email" className="w-full bg-brand-primary/50 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all" placeholder="your@email.com" />
               </div>
-              <div>
-                <label className="block text-sm font-bold text-white mb-2">Message</label>
-                <textarea rows={4} className="w-full bg-brand-ocean-dark border border-zinc-200 rounded-xl px-4 py-3 text-zinc-800 focus:outline-none focus:border-brand-cream focus:ring-1 focus:ring-brand-cream transition-colors" placeholder="How can we help you?"></textarea>
+              <div className="space-y-3">
+                <label className="block text-xs font-black text-zinc-500 uppercase tracking-widest ml-1">Message</label>
+                <textarea rows={4} className="w-full bg-brand-primary/50 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all resize-none" placeholder="How can we help you today?"></textarea>
               </div>
-              <button type="button" className="bg-brand-ocean-dark text-white font-bold py-4 px-8 rounded-xl hover:bg-brand-ocean-dark hover:text-white transition-all shadow-lg hover:shadow-brand-cream/30 hover:-translate-y-1">
+              <button type="button" className="bg-brand-accent hover:brightness-110 text-white font-black tracking-[0.2em] py-5 px-10 rounded-2xl transition-all shadow-2xl shadow-brand-accent/20 hover:-translate-y-1.5 active:scale-95 w-full md:w-auto uppercase text-sm">
                 Send Message
               </button>
             </form>
@@ -81,7 +81,7 @@ export default function Contact() {
       {/* Interactive Map Section */}
       <motion.div 
         initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ duration: 0.8 }}
-        className="mt-20 lg:mt-32 rounded-[40px] overflow-hidden shadow-2xl h-[500px] relative border-8 border-white group bg-zinc-200"
+        className="mt-28 lg:mt-40 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] h-[600px] relative border-8 border-brand-primary group mx-4"
       >
         <iframe 
           title="Campus Map"
@@ -91,12 +91,15 @@ export default function Contact() {
           style={{ border: 0 }} 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          className="grayscale group-hover:grayscale-0 transition-all duration-1000 w-full h-full object-cover"
+          className="grayscale group-hover:grayscale-0 transition-all duration-1000 w-full h-full object-cover brightness-50 group-hover:brightness-100"
         />
         
-        <div className="absolute top-8 left-8 bg-brand-ocean-navy/95 backdrop-blur-md p-6 rounded-3xl shadow-xl max-w-sm hidden md:block transform -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-700">
-           <h4 className="font-bold text-white mb-2 flex items-center gap-2 text-lg"><MapPin size={24} className="bg-brand-ocean-teal text-white px-2 rounded-lg whitespace-nowrap"/> Visit Our Campus</h4>
-           <p className="text-sm text-blue-100 leading-relaxed">Come explore our world-class facilities and meet our expert faculty in person. We'd love to show you around!</p>
+        <div className="absolute top-12 left-12 bg-brand-primary/90 backdrop-blur-2xl p-10 rounded-[2.5rem] shadow-2xl max-w-sm hidden md:block border border-white/10 transform -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-1000">
+           <h4 className="font-black text-white mb-4 flex items-center gap-3 text-2xl tracking-tight">
+             <MapPin size={28} className="text-brand-accent" /> 
+             Visit Campus
+           </h4>
+           <p className="text-zinc-400 font-medium leading-relaxed text-lg">Come explore our world-class facilities and meet our expert faculty in person. We'd love to show you around!</p>
         </div>
       </motion.div>
     </main>
