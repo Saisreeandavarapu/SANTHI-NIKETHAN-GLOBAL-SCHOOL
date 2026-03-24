@@ -1,0 +1,38 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+// Pages
+import Home from './pages/Home';
+import About from './pages/About';
+import CoreValues from './pages/CoreValues';
+import OwnerVision from './pages/OwnerVision';
+import WhyShantiniketan from './pages/WhyShantiniketan';
+import Admissions from './pages/Admissions';
+import Contact from './pages/Contact';
+import Careers from './pages/Careers';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen relative font-sans text-zinc-800 bg-brand-cream overflow-x-hidden flex flex-col">
+        <Header />
+        <div className="flex-grow w-full">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/core-values" element={<CoreValues />} />
+            <Route path="/owner-vision" element={<OwnerVision />} />
+            <Route path="/why-us" element={<WhyShantiniketan />} />
+            <Route path="/admissions" element={<Admissions />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  /* The 4-Color Master Palette */
+  --color-brand-cream: #E7E9F0;       /* Pearl White / Light Cool Gray Background */
+  --color-brand-darkblue: #051747;    /* Deep Midnight Blue (Primary Dark) */
+  --color-brand-slate: #535F80;       /* Muted Slate Blue (Text and Borders) */
+  --color-brand-navy: #081F62;        /* Royal Navy Blue (Accents and Hovers) */
+  --font-sans: "Inter", "Outfit", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-zinc-50 text-zinc-800 antialiased selection:bg-brand-darkblue selection:text-white;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.08) 0px, transparent 40%),
+      radial-gradient(at 100% 0%, hsla(240, 22%, 10%, 0.05) 0px, transparent 40%);
+    background-attachment: fixed;
+  }
+}
