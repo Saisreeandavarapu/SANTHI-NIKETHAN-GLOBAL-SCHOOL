@@ -79,27 +79,81 @@ export default function Contact() {
       </div>
 
       {/* Interactive Map Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ duration: 0.8 }}
-        className="mt-28 lg:mt-40 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] h-[600px] relative border-8 border-brand-primary group mx-4"
+      <motion.div
+        initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+        className="mt-28 lg:mt-40 mx-4"
       >
-        <iframe 
-          title="Campus Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.232308709088!2d73.92135085!3d18.5714041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c147b8b3a3bf%3A0x6f7fdce8e4c16a62!2sLohegaon%2C%20Pune!5e0!3m2!1sen!2sin!4v1704285880000!5m2!1sen!2sin" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-          className="grayscale group-hover:grayscale-0 transition-all duration-1000 w-full h-full object-cover brightness-50 group-hover:brightness-100"
-        />
-        
-        <div className="absolute top-12 left-12 bg-brand-primary/90 backdrop-blur-2xl p-10 rounded-[2.5rem] shadow-2xl max-w-sm hidden md:block border border-white/10 transform -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-1000">
-           <h4 className="font-black text-white mb-4 flex items-center gap-3 text-2xl tracking-tight">
-             <MapPin size={28} className="text-brand-accent" /> 
-             Visit Campus
-           </h4>
-           <p className="text-zinc-400 font-medium leading-relaxed text-lg">Come explore our world-class facilities and meet our expert faculty in person. We'd love to show you around!</p>
+        {/* Section header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 bg-brand-accent/10 border border-brand-accent/20 px-6 py-3 rounded-full mb-4">
+            <MapPin size={18} className="text-brand-accent" />
+            <span className="text-brand-accent font-black text-sm tracking-widest uppercase">Find Us</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-heading font-black text-white tracking-tight">Visit Our <span className="text-brand-accent">Campus</span></h3>
+        </div>
+
+        {/* Map Card */}
+        <div className="relative p-1 rounded-[3rem] bg-gradient-to-br from-brand-accent/40 via-white/5 to-brand-secondary/30 shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 rounded-[2.6rem] overflow-hidden h-auto lg:h-[520px]">
+
+            {/* Left Info Panel */}
+            <div className="bg-brand-secondary/30 backdrop-blur-3xl p-10 flex flex-col justify-between border-r border-white/5">
+              <div>
+                <h4 className="text-2xl font-black text-white mb-8 tracking-tight">Campus Address</h4>
+                <div className="space-y-8">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center shrink-0">
+                      <MapPin size={20} className="text-brand-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-1">Address</p>
+                      <p className="text-white font-semibold leading-relaxed">JW26+RQV, Kutwal Colony,<br />Lohegaon, Pune</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center shrink-0">
+                      <Phone size={20} className="text-brand-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-1">Phone</p>
+                      <p className="text-white font-semibold">+91 77679 46588</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center shrink-0">
+                      <Clock size={20} className="text-brand-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-1">Open Hours</p>
+                      <p className="text-white font-semibold">Mon – Sat<br />9:30 AM – 3:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://maps.google.com/?q=Santhi+Nikethan+Global+School+Lohegaon+Pune"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center justify-center gap-2 bg-brand-accent hover:brightness-110 text-white font-black tracking-widest text-sm py-4 px-8 rounded-2xl transition-all hover:-translate-y-1 active:scale-95 shadow-xl shadow-brand-accent/20"
+              >
+                <MapPin size={16} /> Get Directions
+              </a>
+            </div>
+
+            {/* Right Map Panel */}
+            <div className="lg:col-span-2 h-72 lg:h-auto">
+              <iframe
+                title="Campus Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.232308709088!2d73.92135085!3d18.5714041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c147b8b3a3bf%3A0x6f7fdce8e4c16a62!2sLohegaon%2C%20Pune!5e0!3m2!1sen!2sin!4v1704285880000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
         </div>
       </motion.div>
     </main>

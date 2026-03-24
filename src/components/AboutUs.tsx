@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
 
 export default function AboutUs() {
   return (
@@ -65,19 +64,17 @@ export default function AboutUs() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.4)] border-8 border-brand-primary group">
-              <img
-                src="https://shantiniketanschool.com/public/theme/assets/img/about/01.png"
-                alt="Students learning"
-                className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-1000"
-              />
-              <div className="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition-colors duration-700" />
-
-              {/* Play Video Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-24 h-24 bg-brand-accent/90 backdrop-blur-2xl rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-all duration-500 cursor-pointer pl-1 group-hover:bg-brand-primary group-hover:text-brand-accent border border-white/20">
-                  <Play size={40} className="fill-current" />
-                </button>
+            <div className="relative rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.4)] border-8 border-brand-primary">
+              {/* YouTube Video Embed */}
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/BIkbCnLzTnk?rel=0&modestbranding=1&autoplay=0"
+                  title="Santhi Nikethan Global School – Desam Manade Song"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                />
               </div>
             </div>
 

@@ -9,7 +9,7 @@ interface LogoProps {
 export default function Logo({ className = "h-12", showText = true, variant = 'color' }: LogoProps) {
   const primaryColor = variant === 'light' ? '#FFFFFF' : '#313C52';
   const accentColor = '#B58E31';
-  const textColor = variant === 'light' ? '#FFFFFF' : '#141515ff';
+  const textColor = variant === 'light' ? '#FFFFFF' : '#ffffff';
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>

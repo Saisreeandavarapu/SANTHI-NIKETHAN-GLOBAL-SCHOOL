@@ -39,7 +39,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-28 lg:py-24 bg-brand-primary">
+    <section className="relative min-h-screen flex items-center justify-center py-28 lg:py-32 bg-brand-primary">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence mode="popLayout" initial={false}>

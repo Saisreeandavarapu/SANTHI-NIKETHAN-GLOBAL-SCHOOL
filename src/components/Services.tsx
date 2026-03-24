@@ -63,7 +63,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-12 md:py-16 bg-brand-primary relative overflow-hidden">
+    <section id="services" className="py-12 md:py-4 bg-brand-primary relative overflow-hidden">
       {/* Background glows */}
       <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-brand-accent/5 rounded-full blur-[180px] pointer-events-none -ml-80 -mt-80" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-secondary/10 rounded-full blur-[150px] pointer-events-none -mr-60 -mb-60" />
@@ -84,7 +84,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-heading font-black text-white mb-8 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-4xl font-heading font-black text-white mb-8 tracking-tight leading-[1.1]"
           >
             World-Class Facilities For Every{' '}
             <span className="text-brand-accent">Learner</span>

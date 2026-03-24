@@ -105,10 +105,17 @@ export default function WhyUs() {
           </div>
 
           <div className="relative z-10 flex gap-5 w-full lg:w-auto flex-col sm:flex-row">
-            <a href="/admissions" className="px-12 py-5 bg-brand-accent hover:brightness-110 text-white font-black tracking-widest rounded-2xl text-center shadow-2xl shadow-brand-accent/20 transition-all hover:-translate-y-1.5 active:scale-95">
+            <a
+              href="/admissions"
+              className="px-4 py-2 sm:px-6 sm:py-3 md:px-6 md:py-5 bg-brand-accent hover:brightness-110 text-white font-black tracking-wide sm:tracking-widest rounded-2xl text-center shadow-2xl shadow-brand-accent/20 transition-all hover:-translate-y-1.5 active:scale-95 text-xs sm:text-sm md:text-base whitespace-nowrap"
+            >
               APPLY NOW
             </a>
-            <a href="/contact" className="px-12 py-5 bg-white/5 hover:bg-white/10 backdrop-blur-2xl border border-white/10 text-white font-black tracking-widest rounded-2xl text-center transition-all hover:-translate-y-1.5 active:scale-95">
+
+            <a
+              href="/contact"
+              className="px-4 py-2 sm:px-6 sm:py-3 md:px-6 md:py-5 bg-white/5 hover:bg-white/10 backdrop-blur-2xl border border-white/10 text-white font-black tracking-wide sm:tracking-widest rounded-2xl text-center transition-all hover:-translate-y-1.5 active:scale-95 text-xs sm:text-sm md:text-base"
+            >
               CONTACT US
             </a>
           </div>
