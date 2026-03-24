@@ -17,7 +17,7 @@ const NAV_LINKS = [
   },
   { name: 'ADMISSIONS', href: '/admissions' },
   { name: 'CAREERS', href: '/careers' },
-  { name: 'SERVICES', href: '/#services' },
+  { name: 'SERVICES', href: '/services' },
   { name: 'CONTACT US', href: '/contact' },
 ];
 

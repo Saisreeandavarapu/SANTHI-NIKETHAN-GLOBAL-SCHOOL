@@ -22,6 +22,7 @@ import WhyShantiniketan from './pages/WhyShantiniketan';
 import Admissions from './pages/Admissions';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/services" element={<ServicesPage />} />
           </Routes>
         </div>
         <Footer />
