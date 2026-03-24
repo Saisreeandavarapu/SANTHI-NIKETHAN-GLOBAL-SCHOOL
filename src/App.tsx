@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AdmissionsBanner from './components/AdmissionsBanner';
+import SparkleCursor from './components/SparkleCursor';
 
 // Pages
 import Home from './pages/Home';
@@ -15,6 +17,8 @@ import Careers from './pages/Careers';
 function App() {
   return (
     <BrowserRouter>
+      <SparkleCursor />
+      <AdmissionsBanner />
       <div className="min-h-screen relative font-sans text-zinc-300 bg-brand-primary overflow-x-hidden flex flex-col">
         <Header />
         <div className="flex-grow w-full">
