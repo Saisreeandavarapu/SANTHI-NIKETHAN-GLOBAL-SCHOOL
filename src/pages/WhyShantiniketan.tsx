@@ -14,9 +14,9 @@ export default function WhyShantiniketan() {
   return (
     <main className="pt-32 pb-24 container mx-auto px-4 max-w-7xl min-h-[60vh] bg-brand-primary overflow-hidden">
       <div className="flex flex-col lg:flex-row gap-20 items-center px-4">
-        
+
         {/* Content Side */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}
           className="lg:w-1/2"
         >
@@ -38,9 +38,9 @@ export default function WhyShantiniketan() {
             {METHODS.map((method, idx) => {
               const Icon = method.icon;
               return (
-                <motion.div 
+                <motion.div
                   key={method.name}
-                  initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: idx * 0.1 }}
+                  initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}
                   className="flex items-center gap-4 bg-brand-secondary/10 backdrop-blur-md border border-white/5 p-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-all duration-500 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-brand-primary border border-brand-accent/20 text-brand-accent flex items-center justify-center shrink-0 group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shadow-lg">
@@ -54,26 +54,26 @@ export default function WhyShantiniketan() {
         </motion.div>
 
         {/* Visual Side */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:w-1/2 relative"
         >
-           <div className="relative rounded-[4rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] border-8 border-brand-secondary/20">
-             <img src="https://shantiniketanschool.com/public/theme/assets/img/research/05.jpg" alt="Students exploring" className="w-full h-[700px] object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100" />
-             <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent" />
-           </div>
-           
-           {/* Floating abstract decorative box */}
-           <motion.div 
+          <div className="relative rounded-[4rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] border-8 border-brand-secondary/20">
+            <img src="https://shantiniketanschool.com/public/theme/assets/img/research/05.jpg" alt="Students exploring" className="w-full h-[200px] md:h-[700px] object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent" />
+          </div>
+
+          {/* Floating abstract decorative box */}
+          <motion.div
             animate={{ y: [0, -20, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute -bottom-10 -left-10 bg-brand-secondary/30 backdrop-blur-3xl p-10 rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.4)] max-w-xs border border-white/10 hidden md:block"
-           >
-             <div className="w-16 h-16 bg-brand-accent text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-brand-accent/20">
-               <Trophy size={32} />
-             </div>
-             <h4 className="text-2xl font-black text-white mb-3 tracking-tight">Meaningful Learning</h4>
-             <p className="text-zinc-400 font-medium leading-relaxed">Hands-on approach providing lasting educational experiences for every learner.</p>
-           </motion.div>
+          >
+            <div className="w-16 h-16 bg-brand-accent text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-brand-accent/20">
+              <Trophy size={32} />
+            </div>
+            <h4 className="text-2xl font-black text-white mb-3 tracking-tight">Meaningful Learning</h4>
+            <p className="text-zinc-400 font-medium leading-relaxed">Hands-on approach providing lasting educational experiences for every learner.</p>
+          </motion.div>
         </motion.div>
 
       </div>
