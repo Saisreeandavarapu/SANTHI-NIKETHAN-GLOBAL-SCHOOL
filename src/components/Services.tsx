@@ -63,10 +63,10 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-12 md:py-4 bg-brand-primary relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-brand-primary relative overflow-hidden">
       {/* Background glows - optimized */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-brand-accent/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -ml-40 -mt-40 md:-ml-80 md:-mt-80" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-brand-secondary/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -mr-40 -mb-40 md:-mr-60 md:-mb-60" />
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] bg-brand-accent/5 rounded-full blur-[60px] md:blur-[100px] pointer-events-none -ml-20 -mt-20 sm:-ml-40 sm:-mt-40 md:-ml-80 md:-mt-80" />
+      <div className="absolute bottom-0 right-0 w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-brand-secondary/10 rounded-full blur-[60px] md:blur-[100px] pointer-events-none -mr-10 -mb-10 sm:-mr-40 sm:-mb-40 md:-mr-60 md:-mb-60" />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Header */}
@@ -84,7 +84,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-4xl font-heading font-black text-white mb-8 tracking-tight leading-[1.1]"
+            className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-white mb-6 sm:mb-8 tracking-tight leading-[1.1]"
           >
             World-Class Facilities For Every{' '}
             <span className="text-brand-accent">Learner</span>
@@ -114,7 +114,7 @@ export default function Services() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="relative bg-brand-secondary/30 backdrop-blur-md p-8 md:p-9 rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-white/10 overflow-hidden group transition-all duration-300 cursor-pointer hover:shadow-brand-accent/20 hover:border-brand-accent/30"
+                className="relative bg-brand-secondary/30 backdrop-blur-md p-6 sm:p-8 md:p-9 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-white/10 overflow-hidden group transition-all duration-300 cursor-pointer hover:shadow-brand-accent/20 hover:border-brand-accent/30"
               >
                 {/* Glow Effect on Hover - simplified */}
                 <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -143,14 +143,14 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-10 mx-4 bg-gradient-to-r from-brand-primary via-brand-secondary/20 to-brand-primary backdrop-blur-3xl border border-white/5 rounded-[3.5rem] p-12 md:p-16 text-center relative overflow-hidden shadow-2xl"
+          className="mt-10 mx-4 bg-gradient-to-r from-brand-primary via-brand-secondary/20 to-brand-primary backdrop-blur-3xl border border-white/5 rounded-[2.5rem] md:rounded-[3.5rem] p-8 sm:p-12 md:p-16 text-center relative overflow-hidden shadow-2xl"
         >
           <div className="absolute inset-0 bg-brand-accent/5 pointer-events-none" />
           <div className="relative z-10">
-            <p className="text-brand-accent font-black tracking-[0.2em] text-xs uppercase mb-6">
+            <p className="text-brand-accent font-black tracking-[0.2em] text-xs uppercase mb-4 sm:mb-6">
               Enroll Today
             </p>
-            <h3 className="text-3xl md:text-5xl font-heading font-black text-white mb-8 tracking-tight leading-tight">
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-heading font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">
               Give Your Child the Best Start in Life
             </h3>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">

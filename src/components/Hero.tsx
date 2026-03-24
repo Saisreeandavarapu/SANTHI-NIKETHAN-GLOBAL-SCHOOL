@@ -39,7 +39,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-28 lg:py-32 bg-brand-primary">
+    <section className="relative min-h-screen flex items-center justify-center py-24 md:py-28 lg:py-32 bg-brand-primary">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence mode="popLayout" initial={false}>
@@ -75,7 +75,7 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             {...fadeUp(0.1)}
-            className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-7 leading-[1.05] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-6 sm:mb-7 leading-[1.05] tracking-tight"
           >
             Shape Your <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-accent-light">
@@ -87,7 +87,7 @@ export default function Hero() {
           {/* Sub-text */}
           <motion.p
             {...fadeUp(0.18)}
-            className="text-lg md:text-2xl text-zinc-100/70 mb-10 max-w-2xl leading-relaxed font-medium"
+            className="text-base sm:text-lg md:text-2xl text-zinc-100/70 mb-8 sm:mb-10 max-w-2xl leading-relaxed font-medium"
           >
             Embark on a transformative journey of excellence. We provide a broad and balanced approach to raise leaders ready for tomorrow's challenges.
           </motion.p>
@@ -96,14 +96,14 @@ export default function Hero() {
           <motion.div {...fadeUp(0.26)} className="flex flex-col sm:flex-row gap-4 mb-14">
             <Link
               to="/admissions"
-              className="px-10 py-4 bg-brand-accent hover:brightness-110 text-white rounded-2xl font-black tracking-widest transition-all flex items-center justify-center gap-3 group shadow-xl shadow-brand-accent/20 hover:-translate-y-1 active:scale-95"
+              className="px-6 py-3.5 sm:px-10 sm:py-4 bg-brand-accent hover:brightness-110 text-white rounded-xl sm:rounded-2xl font-black tracking-widest transition-all flex items-center justify-center gap-3 group shadow-xl shadow-brand-accent/20 hover:-translate-y-1 active:scale-95 text-sm sm:text-base"
             >
               APPLY ONLINE
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             <Link
               to="/about-us"
-              className="px-10 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/10 text-white rounded-2xl font-black tracking-widest transition-all shadow-xl hover:-translate-y-1 active:scale-95"
+              className="px-6 py-3.5 sm:px-10 sm:py-4 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/10 text-white rounded-xl sm:rounded-2xl font-black tracking-widest transition-all shadow-xl hover:-translate-y-1 active:scale-95 text-center text-sm sm:text-base"
             >
               LEARN MORE
             </Link>

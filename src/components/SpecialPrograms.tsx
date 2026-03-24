@@ -36,11 +36,11 @@ export default function SpecialPrograms() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-24 bg-brand-primary relative overflow-hidden border-y border-white/5">
+    <section className="py-16 md:py-24 bg-brand-primary relative overflow-hidden border-y border-white/5">
       <div className="absolute inset-0 bg-brand-secondary/20 pointer-events-none" />
       
       {/* Background Glows (optimized) */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[80px] pointer-events-none -mr-20 -mt-20 md:-mr-40 md:-mt-40" />
+      <div className="absolute top-0 right-0 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-brand-accent/5 rounded-full blur-[60px] md:blur-[80px] pointer-events-none -mr-10 -mt-10 md:-mr-40 md:-mt-40" />
       
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10 mb-16">
         <motion.div
@@ -52,7 +52,7 @@ export default function SpecialPrograms() {
           <div className="inline-block bg-brand-accent px-5 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-6 shadow-xl shadow-brand-accent/20">
             Premium Offerings
           </div>
-          <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-tight leading-[1.1] max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-heading font-black text-white tracking-tight leading-[1.1] max-w-2xl">
             Exclusive <span className="text-brand-accent">Programs & Facilities</span>
           </h2>
         </motion.div>
