@@ -64,9 +64,9 @@ const SERVICES = [
 export default function Services() {
   return (
     <section id="services" className="py-12 md:py-4 bg-brand-primary relative overflow-hidden">
-      {/* Background glows */}
-      <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-brand-accent/5 rounded-full blur-[180px] pointer-events-none -ml-80 -mt-80" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-secondary/10 rounded-full blur-[150px] pointer-events-none -mr-60 -mb-60" />
+      {/* Background glows - optimized */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-brand-accent/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -ml-40 -mt-40 md:-ml-80 md:-mt-80" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-brand-secondary/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -mr-40 -mb-40 md:-mr-60 md:-mb-60" />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Header */}
@@ -103,7 +103,7 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4">
           {SERVICES.map((service, idx) => {
             const Icon = service.icon;
             return (
@@ -111,22 +111,27 @@ export default function Services() {
                 key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.07 }}
-                whileHover={{ y: -12 }}
-                className="bg-brand-secondary/20 backdrop-blur-2xl p-9 rounded-[2.5rem] shadow-2xl border border-white/5 group transition-all duration-500 cursor-default"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="relative bg-brand-secondary/30 backdrop-blur-md p-8 md:p-9 rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-white/10 overflow-hidden group transition-all duration-300 cursor-pointer hover:shadow-brand-accent/20 hover:border-brand-accent/30"
               >
-                <div
-                  className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-8 text-white shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}
-                >
-                  <Icon size={32} />
+                {/* Glow Effect on Hover - simplified */}
+                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="relative z-10">
+                  <div
+                    className={`w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 md:mb-8 text-white shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500`}
+                  >
+                    <Icon className="w-7 h-7 md:w-8 md:h-8" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-black text-white mb-3 md:mb-4 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-zinc-300 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-zinc-400 font-medium leading-relaxed text-sm group-hover:text-zinc-300 transition-colors duration-300">
+                    {service.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-black text-white mb-4 tracking-tight">
-                  {service.title}
-                </h3>
-                <p className="text-zinc-400 font-medium leading-relaxed text-sm">
-                  {service.desc}
-                </p>
               </motion.div>
             );
           })}

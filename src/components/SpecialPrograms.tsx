@@ -39,8 +39,8 @@ export default function SpecialPrograms() {
     <section className="py-24 bg-brand-primary relative overflow-hidden border-y border-white/5">
       <div className="absolute inset-0 bg-brand-secondary/20 pointer-events-none" />
       
-      {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[150px] pointer-events-none -mr-40 -mt-40" />
+      {/* Background Glows (optimized) */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[80px] pointer-events-none -mr-20 -mt-20 md:-mr-40 md:-mt-40" />
       
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10 mb-16">
         <motion.div
@@ -72,7 +72,7 @@ export default function SpecialPrograms() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: idx * 0.15, duration: 0.7, ease: "easeOut" }}
-              className="min-w-[85vw] md:min-w-[450px] lg:min-w-[550px] snap-center relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-2xl border border-white/10 shrink-0"
+              className="w-[85vw] md:w-[400px] lg:w-[500px] snap-center relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-2xl border border-white/10 shrink-0"
             >
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
@@ -81,29 +81,29 @@ export default function SpecialPrograms() {
                   alt={program.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${program.color} opacity-60 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-80`} />
+                <div className={`absolute inset-0 bg-gradient-to-t ${program.color} opacity-60 transition-opacity duration-500 group-hover:opacity-80`} />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent opacity-90" />
               </div>
 
               {/* Content */}
-              <div className="relative h-[450px] md:h-[550px] p-8 md:p-12 flex flex-col justify-end">
-                <div className="transform transition-all duration-700 translate-y-8 group-hover:translate-y-0">
-                  <span className="text-brand-accent font-black tracking-widest text-xs uppercase mb-4 block drop-shadow-md">
+              <div className="relative h-[400px] md:h-[500px] p-6 md:p-10 flex flex-col justify-end">
+                <div className="transform transition-all duration-700 translate-y-6 md:translate-y-10 group-hover:translate-y-0">
+                  <span className="text-brand-accent font-black tracking-widest text-[10px] md:text-xs uppercase mb-3 block drop-shadow-md">
                     {program.subtitle}
                   </span>
-                  <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight drop-shadow-xl">
+                  <h3 className="text-2xl md:text-4xl font-black text-white mb-4 leading-tight drop-shadow-xl">
                     {program.title}
                   </h3>
                   <div className="overflow-hidden">
-                    <p className="text-zinc-300 font-medium leading-relaxed opacity-0 transform translate-y-8 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-100 text-lg">
+                    <p className="text-zinc-300 font-medium leading-relaxed opacity-0 transform translate-y-8 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-100 text-sm md:text-base">
                       {program.desc}
                     </p>
                   </div>
                 </div>
                 
                 {/* Decorative Elements */}
-                <div className="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 -rotate-45 group-hover:rotate-0">
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 -rotate-45 group-hover:rotate-0">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </div>
