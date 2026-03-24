@@ -15,7 +15,7 @@ import Careers from './pages/Careers';
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen relative font-sans text-zinc-800 bg-brand-cream overflow-x-hidden flex flex-col">
+      <div className="min-h-screen relative font-sans text-zinc-800 bg-brand-ocean-dark overflow-x-hidden flex flex-col">
         <Header />
         <div className="flex-grow w-full">
           <Routes>

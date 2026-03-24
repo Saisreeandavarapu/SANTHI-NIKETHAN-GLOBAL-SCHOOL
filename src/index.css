@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* The 4-Color Master Palette */
-  --color-brand-cream: #E7E9F0;       /* Pearl White / Light Cool Gray Background */
-  --color-brand-darkblue: #051747;    /* Deep Midnight Blue (Primary Dark) */
-  --color-brand-slate: #535F80;       /* Muted Slate Blue (Text and Borders) */
-  --color-brand-navy: #081F62;        /* Royal Navy Blue (Accents and Hovers) */
+  /* The Oceanic Dark Palette */
+  --color-brand-ocean-dark: #21295C;     /* Deepest Indigo Background */
+  --color-brand-ocean-navy: #1B3B6F;     /* True Navy Cards/Sections */
+  --color-brand-ocean-cerulean: #065A82; /* Deep Cerulean Borders/Secondary */
+  --color-brand-ocean-teal: #1C7293;     /* Bright Teal Accent/Buttons */
   --font-sans: "Inter", "Outfit", sans-serif;
   --font-heading: "Outfit", sans-serif;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-zinc-50 text-zinc-800 antialiased selection:bg-brand-darkblue selection:text-white;
+    @apply font-sans bg-brand-ocean-dark text-blue-100 antialiased selection:bg-brand-ocean-teal selection:text-white;
     background-image: 
       radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.08) 0px, transparent 40%),
       radial-gradient(at 100% 0%, hsla(240, 22%, 10%, 0.05) 0px, transparent 40%);
