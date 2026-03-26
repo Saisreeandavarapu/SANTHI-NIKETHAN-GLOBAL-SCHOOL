@@ -3,7 +3,7 @@ import { Quote, CheckCircle2 } from 'lucide-react';
 
 export default function OwnerVision() {
   return (
-    <main className="pt-32 pb-24 container mx-auto px-4 max-w-7xl bg-brand-primary">
+    <main className="pt-32 pb-10 container mx-auto px-4 max-w-7xl bg-brand-primary">
       {/* Top Vision Section */}
       <div className="flex flex-col md:flex-row gap-16 items-start mb-28 px-4">
 
@@ -32,21 +32,28 @@ export default function OwnerVision() {
 
         {/* Content Column */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-          className="md:w-7/12"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full md:w-7/12 lg:w-6/12 px-4 md:px-0"
         >
-          <div className="inline-block bg-brand-accent px-5 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-8 shadow-xl shadow-brand-accent/10">
+          {/* Section Tag */}
+          <div className="inline-block bg-brand-accent px-4 py-1 sm:px-5 sm:py-1 rounded-full text-white font-black text-xs sm:text-sm tracking-[0.15em] uppercase mb-6 sm:mb-4 shadow-xl shadow-brand-accent/10">
             Vision & Philosophy
           </div>
-          <h2 className="text-4xl md:text-6xl font-heading font-black text-white mb-10 leading-[1.1] tracking-tight">
-            "Embrace a learner-focused <br /> <span className="text-brand-accent">curriculum for results."</span>
+
+          {/* Heading */}
+          <h2 className="text-3xl sm:text-xl  lg:text-3xl font-heading font-black text-white mb-8 sm:mb-3 leading-snug sm:leading-tight tracking-tight">
+            "Embrace a learner-focused <br />
+            <span className="text-brand-accent">curriculum for results."</span>
           </h2>
 
-          <div className="space-y-8 text-xl text-zinc-400 leading-relaxed font-medium mb-12">
+          {/* Paragraphs */}
+          <div className="space-y-6 sm:space-y-8 text-base sm:text-xs md:text-sm text-zinc-400 leading-relaxed font-medium mb-10 sm:mb-8">
             <p>
               Personalized learning encompasses an educational methodology customized to individual students' distinct strengths, weaknesses, competencies, and interests. This approach entails adapting the learning environment, instructional pace, and curriculum to align with each learner's specific requirements.
             </p>
-            <p className="pl-8 border-l-4 border-brand-accent bg-brand-secondary/20 backdrop-blur-xl rounded-r-[2rem] py-8 pr-8 text-white font-bold shadow-2xl">
+            <p className="pl-4 sm:pl-6 md:pl-8 border-l-4 border-brand-accent bg-brand-secondary/20 backdrop-blur-xl rounded-r-2xl py-6 sm:py-4 pr-4 sm:pr-8 text-white font-bold shadow-2xl">
               By harnessing technology, data, and tailored lesson plans, educators can craft a more individualized learning experience, thereby nurturing student engagement and fostering academic achievement.
             </p>
             <p>
@@ -54,11 +61,12 @@ export default function OwnerVision() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {['Experiential-based education', 'Concept mapping', 'Group work/ Team Work', 'Genius Competition'].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4 bg-brand-secondary/10 backdrop-blur-md border border-white/5 p-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-all duration-500 group">
-                <CheckCircle2 className="text-brand-accent shrink-0 group-hover:scale-110 transition-transform" size={28} />
-                <span className="font-black text-zinc-200 text-sm tracking-tight uppercase">{item}</span>
+              <div key={idx} className="flex items-center gap-3 sm:gap-4 bg-brand-secondary/10 backdrop-blur-md border border-white/5 p-4 sm:p-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-all duration-500 group">
+                <CheckCircle2 className="text-brand-accent shrink-0 group-hover:scale-110 transition-transform" size={24} />
+                <span className="font-black text-zinc-200 text-xs sm:text-sm tracking-tight uppercase">{item}</span>
               </div>
             ))}
           </div>
@@ -66,39 +74,50 @@ export default function OwnerVision() {
       </div>
 
       {/* Our Team and Community Section */}
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-brand-secondary/20 backdrop-blur-3xl rounded-[4rem] p-12 md:p-20 shadow-[0_40px_100px_rgba(0,0,0,0.3)] border border-white/5 relative overflow-hidden mx-4">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-accent/5 rounded-full blur-[120px] -mr-40 -mt-20 pointer-events-none" />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-brand-secondary/20 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/5 relative overflow-hidden mx-4 md:mx-6"
+      >
+        {/* Background Glow */}
+        <div className="absolute top-0 right-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-brand-accent/5 rounded-full blur-[60px] sm:blur-[80px] md:blur-[100px] -mr-16 sm:-mr-24 md:-mr-32 -mt-12 sm:-mt-16 md:-mt-20 pointer-events-none" />
 
-        <div className="text-center max-w-4xl mx-auto mb-20 relative z-10">
-          <h2 className="text-xl md:text-5xl font-heading font-black text-white mb-8 tracking-tight">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 relative z-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-black text-white mb-4 sm:mb-6 tracking-tight">
             Our Team & <span className="text-brand-accent">Community</span>
           </h2>
-          <p className="text-xl text-zinc-300 font-medium leading-relaxed italic opacity-80">
-            "At the core of our approach to education is that it should be joyful, meaningful and challenging. This is great learning and students exposed to this approach will always achieve more both academically and socially."
+          <p className="text-sm sm:text-base md:text-lg text-zinc-300 font-medium leading-relaxed italic opacity-80">
+            "At the core of our approach to education is that it should be joyful, meaningful and challenging. Students exposed to this approach will always achieve more."
           </p>
         </div>
 
-        <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-8 text-xl text-zinc-400 font-medium leading-relaxed">
+        {/* Content */}
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+          {/* Text Column */}
+          <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg text-zinc-400 font-medium leading-relaxed">
             <p>
-              The child is at the center of all that we are doing, and our approach is broad and balanced, to help raise them ready for the future. A future that in some ways is known and in many ways is not. We are in an age where skills are just as important as knowledge.
+              The child is at the center of all that we are doing, and our approach is broad and balanced, to help raise them ready for the future. Skills are just as important as knowledge.
             </p>
             <p className="text-zinc-200">
-              We believe that understanding is the key to knowledge, which will then naturally lead to great academic results. Students are encouraged to be critical learners and to be involved in their own learning process.
+              Understanding is the key to knowledge, which leads to great academic results. Students are encouraged to be critical learners.
             </p>
-            <p className="bg-brand-primary/50 p-10 rounded-[3rem] border border-brand-accent/20 font-bold text-zinc-200 shadow-2xl border-l-8 border-l-brand-accent">
-              Our teachers are the designers of classrooms - exploring design thinking, developing critical thinking and logical reasoning capabilities. They are facilitators, making students think out of the box.
+            <p className="bg-brand-primary/50 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl border border-brand-accent/20 font-bold text-zinc-200 shadow-2xl border-l-4 border-l-brand-accent">
+              Our teachers are designers of classrooms - exploring design thinking, developing critical thinking and logical reasoning. They are facilitators, making students think out of the box.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 justify-center items-center md:grid-cols-2 md:gap-6 h-full relative">
-            <div className="md:space-y-6 md:translate-y-12">
-              <img src="https://shantiniketanschool.com/public/theme/assets/img/research/02.jpg" className="rounded-[3rem] object-cover h-80 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="Students in Classroom" />
-              <img src="https://shantiniketanschool.com/public/theme/assets/img/research/04.jpg" className="rounded-[3rem] object-cover h-64 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="Student Reading" />
+          {/* Image Column */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 h-auto">
+            <div className="flex flex-col gap-4 md:translate-y-2">
+              <img src="https://shantiniketanschool.com/public/theme/assets/img/research/02.jpg" className="rounded-xl md:rounded-2xl object-cover h-44 sm:h-52 md:h-56 lg:h-64 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="Students in Classroom" />
+              <img src="https://shantiniketanschool.com/public/theme/assets/img/research/04.jpg" className="rounded-xl md:rounded-2xl object-cover h-36 sm:h-44 md:h-48 lg:h-52 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="Student Reading" />
             </div>
-            <div className="  md:space-y-6 md:-translate-y-6">
-              <img src="https://shantiniketanschool.com/public/theme/assets/img/research/03.jpg" className="rounded-[3rem] object-cover h-64 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="Student Presentation" />
-              <img src="https://shantiniketanschool.com/public/theme/assets/img/course/single.jpg" className="rounded-[3rem] object-cover h-80 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="School Activity" />
+            <div className="flex flex-col gap-4 md:-translate-y-2">
+              <img src="https://shantiniketanschool.com/public/theme/assets/img/research/03.jpg" className="rounded-xl md:rounded-2xl object-cover h-36 sm:h-44 md:h-48 lg:h-52 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="Student Presentation" />
+              <img src="https://shantiniketanschool.com/public/theme/assets/img/course/single.jpg" className="rounded-xl md:rounded-2xl object-cover h-44 sm:h-52 md:h-56 lg:h-64 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="School Activity" />
             </div>
           </div>
         </div>

@@ -1,93 +1,119 @@
-import { motion } from 'framer-motion';
+"use client";
+
+import { motion } from "framer-motion";
 
 export default function AboutUs() {
   return (
-    <section id="about" className="py-12 md:py-40 bg-brand-primary relative overflow-hidden">
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary rounded-l-[100px] -z-10 opacity-20 hidden lg:block" />
+    <section
+      id="about"
+      className="pt-12 sm:pt-16 md:pt-36 pb-10 sm:pb-14 md:pb-16 bg-brand-primary relative overflow-hidden"
+    >
+      {/* Background */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary rounded-l-[80px] -z-10 opacity-20 hidden lg:block" />
 
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
 
-          {/* Text Content Area */}
+          {/* TEXT */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-block bg-brand-accent px-5 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-8 shadow-xl shadow-brand-accent/10">
+            {/* Tag */}
+            <div className="inline-block bg-brand-accent px-4 py-2 rounded-full text-white font-black text-[10px] sm:text-xs tracking-widest uppercase mb-6 shadow-lg">
               About Shantiniketan
             </div>
-            <h2 className="text-4xl md:text-6xl font-heading font-black text-white mb-10 leading-[1.1] tracking-tight">
-              Our School Inspires You <span className="text-brand-accent">More.</span>
+
+            {/* Heading */}
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-heading font-black text-white mb-6 md:mb-8 leading-tight tracking-tight">
+              Our School Inspires You{" "}
+              <span className="text-brand-accent">More.</span>
             </h2>
 
-            <p className="text-xl text-zinc-400 mb-10 leading-relaxed font-medium">
+            {/* Description */}
+            <p className="text-sm sm:text-base md:text-lg text-zinc-400 mb-6 md:mb-8 leading-relaxed font-medium">
               We are tightly integrating components in a way that will have the most beneficial impact on the development of the child. The core philosophy inspired by the Montessori method drives our curriculum.
             </p>
 
-            <div className="flex flex-col gap-8 mb-12">
-              <div className="flex gap-6 items-start group">
-                <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center shrink-0 group-hover:bg-brand-accent transition-all duration-500">
-                  <span className="text-brand-accent group-hover:text-white font-black text-2xl">1</span>
+            {/* Features */}
+            <div className="flex flex-col gap-6 mb-8 md:mb-10">
+
+              {/* Item 1 */}
+              <div className="flex gap-4 items-start group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center shrink-0 group-hover:bg-brand-accent transition">
+                  <span className="text-brand-accent group-hover:text-white font-black text-lg sm:text-xl">1</span>
                 </div>
                 <div>
-                  <h4 className="text-2xl font-black text-white mb-2 tracking-tight">Quality Education</h4>
-                  <p className="text-zinc-300 font-medium">The teachers have been trained intensively on the philosophy and curriculum to provide the highest standard of learning.</p>
+                  <h4 className="text-lg sm:text-xl font-black text-white mb-1">
+                    Quality Education
+                  </h4>
+                  <p className="text-zinc-300 text-sm sm:text-base">
+                    The teachers are trained to provide the highest standard of learning.
+                  </p>
                 </div>
               </div>
-              <div className="flex gap-6 items-start group">
-                <div className="w-14 h-14 rounded-2xl bg-brand-accent-light/10 border border-brand-accent-light/20 flex items-center justify-center shrink-0 group-hover:bg-brand-accent-light transition-all duration-500">
-                  <span className="text-brand-accent-light group-hover:text-white font-black text-2xl">2</span>
+
+              {/* Item 2 */}
+              <div className="flex gap-4 items-start group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-accent-light/10 border border-brand-accent-light/20 flex items-center justify-center shrink-0 group-hover:bg-brand-accent-light transition">
+                  <span className="text-brand-accent-light group-hover:text-white font-black text-lg sm:text-xl">2</span>
                 </div>
                 <div>
-                  <h4 className="text-2xl font-black text-white mb-2 tracking-tight">Personalized Learning</h4>
-                  <p className="text-zinc-300 font-medium">We nurture individual students' distinct strengths and interests. Each material is designed keeping curriculum objectives in mind.</p>
+                  <h4 className="text-lg sm:text-xl font-black text-white mb-1">
+                    Personalized Learning
+                  </h4>
+                  <p className="text-zinc-300 text-sm sm:text-base">
+                    We nurture each student's strengths and interests individually.
+                  </p>
                 </div>
               </div>
+
             </div>
 
+            {/* Button */}
             <a
               href="/about-us"
-              className="inline-block bg-brand-secondary/40 hover:bg-brand-secondary/60 backdrop-blur-xl border border-white/5 text-white px-10 py-5 rounded-2xl font-black tracking-widest shadow-2xl transition-all hover:-translate-y-1.5 active:scale-95"
+              className="inline-block bg-brand-secondary/40 hover:bg-brand-secondary/60 backdrop-blur-xl border border-white/5 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl font-bold tracking-wide sm:tracking-widest shadow-xl transition-all hover:-translate-y-1 active:scale-95 text-sm sm:text-base"
             >
               DISCOVER MORE
             </a>
           </motion.div>
 
-          {/* Image & Video Area */}
+          {/* IMAGE / VIDEO */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.4)] border-8 border-brand-primary">
-              {/* YouTube Video Embed */}
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            {/* Video */}
+            <div className="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.35)] border-4 sm:border-6 md:border-8 border-brand-primary">
+              <div className="relative w-full pb-[56.25%]">
                 <iframe
-                  src="https://www.youtube.com/embed/BIkbCnLzTnk?rel=0&modestbranding=1&autoplay=0"
-                  title="Santhi Nikethan Global School – Desam Manade Song"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                  src="https://www.youtube.com/embed/BIkbCnLzTnk?rel=0&modestbranding=1"
+                  title="School Video"
                   className="absolute inset-0 w-full h-full"
-                  style={{ border: 0 }}
+                  allowFullScreen
                 />
               </div>
             </div>
 
-            {/* Experience Badge */}
+            {/* Badge (FIXED POSITION) */}
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="absolute -bottom-10 -left-10 bg-brand-primary/90 backdrop-blur-3xl text-white p-10 rounded-[2.5rem] shadow-2xl border border-white/10 max-w-[240px]"
+              transition={{ delay: 0.3 }}
+              className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-brand-primary/90 backdrop-blur-xl text-white p-4 sm:p-6 rounded-2xl shadow-xl border border-white/10"
             >
-              <h3 className="text-6xl font-black mb-2 text-brand-accent">95%</h3>
-              <p className="font-black text-xs uppercase tracking-[0.2em] text-zinc-400">Student Success Rate</p>
+              <h3 className="text-2xl sm:text-4xl font-black text-brand-accent">
+                95%
+              </h3>
+              <p className="text-[10px] sm:text-xs uppercase tracking-widest text-zinc-400">
+                Success Rate
+              </p>
             </motion.div>
 
           </motion.div>

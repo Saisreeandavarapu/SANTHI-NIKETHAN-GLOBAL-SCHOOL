@@ -59,32 +59,44 @@ export default function WhyUs() {
             Our unique teaching methods are designed to foster deep understanding through experiential, artistic, and modern laboratory-style learning.
           </motion.p>
         </div>
+        <div className="overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-          {WHY_US_FEATURES.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -12 }}
-                className="bg-brand-secondary/30 backdrop-blur-2xl p-10 rounded-[2.5rem] shadow-2xl border border-white/5 group transition-all duration-500"
-              >
-                <div className="w-16 h-16 bg-brand-primary border border-brand-accent/30 rounded-2xl flex items-center justify-center mb-8 text-brand-accent group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shadow-xl shadow-brand-accent/10">
-                  <Icon size={32} />
-                </div>
-                <h3 className="text-2xl font-black text-white mb-4 tracking-tight">
-                  {feature.title}
-                </h3>
-                <p className="text-zinc-300 font-medium leading-relaxed">
-                  {feature.desc}
-                </p>
-              </motion.div>
-            );
-          })}
+          {/* Container */}
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4 sm:px-6 md:px-8">
+
+            {WHY_US_FEATURES.map((feature, idx) => {
+              const Icon = feature.icon;
+
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -12 }}
+                  className="min-w-[280px] sm:min-w-0 snap-start bg-brand-secondary/30 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-[1.8rem] md:rounded-[2.5rem] shadow-xl md:shadow-2xl border border-white/5 group transition-all duration-500"
+                >
+
+                  {/* Icon */}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-brand-primary border border-brand-accent/30 rounded-xl md:rounded-2xl flex items-center justify-center mb-5 sm:mb-6 md:mb-8 text-brand-accent group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shadow-md md:shadow-xl md:shadow-brand-accent/10">
+                    <Icon size={24} className="md:hidden" />
+                    <Icon size={28} className="hidden md:block" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white mb-2 sm:mb-3 md:mb-4 tracking-tight">
+                    {feature.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm sm:text-base text-zinc-300 font-medium leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Stats Banner */}
@@ -93,28 +105,90 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-12 bg-brand-primary/80 backdrop-blur-3xl rounded-[3.5rem] p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between text-white shadow-[0_50px_100px_rgba(0,0,0,0.4)] border border-white/5 relative overflow-hidden mx-4"
+          className="
+    mt-10 sm:mt-12 md:mt-16
+    bg-brand-primary/80 backdrop-blur-3xl
+    rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3.5rem]
+    p-6 sm:p-8 md:p-12 lg:p-16
+    flex flex-col lg:flex-row
+    items-center justify-between
+    text-white
+    shadow-[0_30px_60px_rgba(0,0,0,0.35)] md:shadow-[0_50px_100px_rgba(0,0,0,0.4)]
+    border border-white/5
+    relative overflow-hidden
+    mx-3 sm:mx-4 md:mx-6
+  "
         >
-          {/* Abstract background shapes */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-brand-accent/10 rounded-full blur-[100px] -mr-20 -mt-20"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-secondary/20 rounded-full blur-[100px] -ml-20 -mb-20"></div>
+          {/* Background Glow */}
+          <div className="absolute top-0 right-0 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-brand-accent/10 rounded-full blur-[80px] md:blur-[100px] -mr-10 sm:-mr-16 md:-mr-20 -mt-10 sm:-mt-16 md:-mt-20"></div>
+          <div className="absolute bottom-0 left-0 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-brand-secondary/20 rounded-full blur-[80px] md:blur-[100px] -ml-10 sm:-ml-16 md:-ml-20 -mb-10 sm:-mb-16 md:-mb-20"></div>
 
-          <div className="relative z-10 mb-10 lg:mb-0 lg:max-w-2xl text-center lg:text-left">
-            <h3 className="text-3xl md:text-5xl font-heading font-black mb-6 tracking-tight">Admissions Open 2025-26</h3>
-            <p className="text-zinc-400 text-xl font-medium leading-relaxed">Secure your child's future today. Limited seats available for the upcoming session. Join the legacy of excellence.</p>
+          {/* Text */}
+          <div className="relative z-10 mb-8 sm:mb-10 lg:mb-0 lg:max-w-2xl text-center lg:text-left">
+            <h3 className="
+      text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+      font-heading font-black
+      mb-4 sm:mb-6
+      tracking-tight
+      leading-tight
+    ">
+              Admissions Open 2025-26
+            </h3>
+
+            <p className="
+      text-zinc-300
+      text-sm sm:text-base md:text-lg lg:text-xl
+      font-medium
+      leading-relaxed
+      max-w-xl mx-auto lg:mx-0
+    ">
+              Secure your child's future today. Limited seats available for the upcoming session. Join the legacy of excellence.
+            </p>
           </div>
 
-          <div className="relative z-10 flex gap-5 w-full lg:w-auto flex-col sm:flex-row">
+          {/* Buttons */}
+          <div className="
+    relative z-10
+    flex gap-3 sm:gap-4 md:gap-5
+    w-full lg:w-auto
+    flex-col sm:flex-row
+  ">
             <a
               href="/admissions"
-              className="px-4 py-2 sm:px-6 sm:py-3 md:px-6 md:py-5 bg-brand-accent hover:brightness-110 text-white font-black tracking-wide sm:tracking-widest rounded-2xl text-center shadow-2xl shadow-brand-accent/20 transition-all hover:-translate-y-1.5 active:scale-95 text-xs sm:text-sm md:text-base whitespace-nowrap"
+              className="
+        px-5 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4
+        bg-brand-accent hover:brightness-110
+        text-white font-bold sm:font-black
+        tracking-wide sm:tracking-widest
+        rounded-xl sm:rounded-2xl
+        text-center
+        shadow-lg sm:shadow-2xl shadow-brand-accent/20
+        transition-all duration-300
+        hover:-translate-y-1 sm:hover:-translate-y-1.5
+        active:scale-95
+        text-sm sm:text-base
+        whitespace-nowrap
+      "
             >
               APPLY NOW
             </a>
 
             <a
               href="/contact"
-              className="px-4 py-2 sm:px-6 sm:py-3 md:px-6 md:py-5 bg-white/5 hover:bg-white/10 backdrop-blur-2xl border border-white/10 text-white font-black tracking-wide sm:tracking-widest rounded-2xl text-center transition-all hover:-translate-y-1.5 active:scale-95 text-xs sm:text-sm md:text-base"
+              className="
+        px-5 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4
+        bg-white/5 hover:bg-white/10
+        backdrop-blur-2xl
+        border border-white/10
+        text-white font-bold sm:font-black
+        tracking-wide sm:tracking-widest
+        rounded-xl sm:rounded-2xl
+        text-center
+        transition-all duration-300
+        hover:-translate-y-1 sm:hover:-translate-y-1.5
+        active:scale-95
+        text-sm sm:text-base
+      "
             >
               CONTACT US
             </a>

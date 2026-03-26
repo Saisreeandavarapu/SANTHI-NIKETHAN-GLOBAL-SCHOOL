@@ -36,23 +36,23 @@ export default function SpecialPrograms() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-16 md:py-24 bg-brand-primary relative overflow-hidden border-y border-white/5">
+    <section className="py-16 md:py-10 bg-brand-primary relative overflow-hidden border-y border-white/5">
       <div className="absolute inset-0 bg-brand-secondary/20 pointer-events-none" />
-      
+
       {/* Background Glows (optimized) */}
       <div className="absolute top-0 right-0 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-brand-accent/5 rounded-full blur-[60px] md:blur-[80px] pointer-events-none -mr-10 -mt-10 md:-mr-40 md:-mt-40" />
-      
+
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10 mb-16">
         <motion.div
-           initial={{ opacity: 0, x: -30 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           <div className="inline-block bg-brand-accent px-5 py-2 rounded-full text-white font-black text-xs tracking-[0.2em] uppercase mb-6 shadow-xl shadow-brand-accent/20">
             Premium Offerings
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-heading font-black text-white tracking-tight leading-[1.1] max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-white tracking-tight leading-[1.1] max-w-2xl">
             Exclusive <span className="text-brand-accent">Programs & Facilities</span>
           </h2>
         </motion.div>
@@ -60,7 +60,7 @@ export default function SpecialPrograms() {
 
       <div className="relative w-full z-10">
         {/* Carousel Container */}
-        <div 
+        <div
           ref={scrollRef}
           className="flex gap-8 overflow-x-auto px-4 md:px-8 pb-12 pt-4 snap-x snap-mandatory scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -68,16 +68,16 @@ export default function SpecialPrograms() {
           {PROGRAMS.map((program, idx) => (
             <motion.div
               key={program.title}
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: idx * 0.15, duration: 0.7, ease: "easeOut" }}
-              className="w-[85vw] md:w-[400px] lg:w-[500px] snap-center relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-2xl border border-white/10 shrink-0"
+              className="w-full max-w-[600px] lg:max-w-[700px] snap-center relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-2xl border border-white/10 shrink-0"
             >
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
-                <img 
-                  src={program.image} 
+                <img
+                  src={program.image}
                   alt={program.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
@@ -99,13 +99,6 @@ export default function SpecialPrograms() {
                       {program.desc}
                     </p>
                   </div>
-                </div>
-                
-                {/* Decorative Elements */}
-                <div className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 -rotate-45 group-hover:rotate-0">
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
                 </div>
               </div>
             </motion.div>
